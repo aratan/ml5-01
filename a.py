@@ -28,6 +28,7 @@ print(sales)
 sales = sales.drop_duplicates()
 print(sales)
 
+
 #Elimina vacias
 sales = sales.dropna()
 
@@ -37,4 +38,20 @@ print(sales)
 plt.bar(sales['Country'],sales['Customer spendings'])
 plt.show()
 
+#deja solo Country, Age, Gender, Customer spendings
+##sales.drop(axis=1, columns='Name')
+sales =  sales.drop(axis=1, columns=['Name','Phone number','Email','Address','Postal code','Last date of connection','Last time of connection'])
+####['Name','Country','Age','Score','Scholarship'])
+print(sales)
 
+"""with open('csvfile.csv','w') as file:
+    for line in sales:
+        for cell in line:
+            file.write(cell)
+        file.write("\n")
+
+with open("csvfile2.csv", "w") as file:
+        file.write("Country,Customer spendings\n")
+        writer = csv.writer(file)
+        writer.writerows(sales)
+"""
